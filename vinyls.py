@@ -35,11 +35,7 @@ def before(
     if index == 0:
         return
 
-    try:
-        before = sorted_sheet[index - 1]
-    except IndexError:
-        return
-    
+    before = sorted_sheet[index - 1]
     if before not in wall_album_list:
         return before
 
@@ -69,14 +65,10 @@ def after(
 
     Returns: Album | None
     """
-    if index > sorted_sheet_count + 1:
+    if index == sorted_sheet_count - 1:
         return
 
-    try:
-        after = sorted_sheet[index + 1]
-    except IndexError:
-        return
-    
+    after = sorted_sheet[index + 1]
     if after not in wall_album_list:
         return after
 
