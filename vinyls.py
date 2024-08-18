@@ -33,9 +33,13 @@ def before(
     Returns: Album | None
     """
     if index == 0:
-        return None
+        return
 
-    before = sorted_sheet[index - 1]
+    try:
+        before = sorted_sheet[index - 1]
+    except IndexError:
+        return
+    
     if before not in wall_album_list:
         return before
 
@@ -43,9 +47,8 @@ def before(
         current_album = sorted_sheet[index - i]
         if current_album in wall_album_list:
             continue
-        return current_album
 
-    return None
+        return current_album
 
 
 def after(
@@ -67,9 +70,13 @@ def after(
     Returns: Album | None
     """
     if index > sorted_sheet_count + 1:
-        return None
+        return
 
-    after = sorted_sheet[index + 1]
+    try:
+        after = sorted_sheet[index + 1]
+    except IndexError:
+        return
+    
     if after not in wall_album_list:
         return after
 
@@ -77,9 +84,8 @@ def after(
         current_album = sorted_sheet[index + i]
         if current_album in wall_album_list:
             continue
-        return current_album
 
-    return None
+        return current_album
 
 
 def get_sorted_albums(sheet: str) -> list[str]:

@@ -48,11 +48,11 @@ def main() -> None:
 
     # Print the albums that come one before and one after the random album.
     print(f"Albums that come one before and one after {format(album)}:\n")
-    if before_album is None:
+    if before_album == None:
         print("No album comes before this album.")
     else:
         print(f"Before: {format(before_album)}")
-    if after_album is None:
+    if after_album == None:
         print("No album comes after this album.")
     else:
         print(f"After: {format(after_album)}")
