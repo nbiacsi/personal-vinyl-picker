@@ -14,10 +14,8 @@ from vinyls import format, before, after, get_sorted_albums, get_wall_albums
 
 # Main function of the script.
 def main() -> None:
-    vinyl_sheet: list[str] = r"C:\Users\nickb\OneDrive\Misc\Scripts\Vinyls\personal-vinyl-picker\Vinyls.csv"
-    wall_vinyl_sheet: list[str] = (
-        r"C:\Users\nickb\OneDrive\Misc\Scripts\Vinyls\personal-vinyl-picker\Wall Vinyls.csv"
-    )
+    vinyl_sheet: list[str] = "/home/sloth/Documents/Scripts/Vinyl_Picker/personal-vinyl-picker/Vinyls.csv"
+    wall_vinyl_sheet: list[str] = "/home/sloth/Documents/Scripts/Vinyl_Picker/personal-vinyl-picker/Wall Vinyls.csv"
     sorted_sheet: list[str] = get_sorted_albums(vinyl_sheet)
     sorted_sheet_count: int = len(sorted_sheet)
     wall_album_list: list[str] = get_wall_albums(wall_vinyl_sheet)
